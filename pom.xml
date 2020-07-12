@@ -11,7 +11,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <aspectj.version>1.9.5</aspectj.version>
+        <aspectj.version>1.8.10</aspectj.version>
         <allure.version>2.13.2</allure.version>
     </properties>
 
