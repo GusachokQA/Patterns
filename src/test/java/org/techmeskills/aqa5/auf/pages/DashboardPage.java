@@ -8,7 +8,7 @@ import org.techmeskills.aqa5.auf.core.BrowsersService;
 public class DashboardPage extends BasePageFactory {
 
     @FindBy(id = "sidebar-projects-add")
-    public WebElement addProjectButton;
+    WebElement addProjectButton;
 
     @FindBy(id = "sidebar-projects-add")
     public WebElement pageIdentifier;
@@ -27,6 +27,11 @@ public class DashboardPage extends BasePageFactory {
     @Override
     public boolean isPageOpened() {
         return pageIdentifier.isDisplayed();
+    }
+
+    public AddProjectPage clickAddProjectButton(){
+        addProjectButton.click();
+        return new AddProjectPage(browsersService);
     }
 /*
     @Override

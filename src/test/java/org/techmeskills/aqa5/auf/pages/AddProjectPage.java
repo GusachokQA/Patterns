@@ -7,6 +7,8 @@ import org.techmeskills.aqa5.auf.baseEntity.BasePage;
 import org.techmeskills.aqa5.auf.baseEntity.BasePageFactory;
 import org.techmeskills.aqa5.auf.core.BrowsersService;
 import org.techmeskills.aqa5.auf.elements.UIElement;
+import org.techmeskills.aqa5.auf.pages.administration.AdministrationPage;
+import org.techmeskills.aqa5.auf.pages.administration.ProjectsPage;
 
 public class AddProjectPage extends BasePageFactory {
 
@@ -14,7 +16,7 @@ public class AddProjectPage extends BasePageFactory {
     public WebElement pageIdentifier;
 
     @FindBy(id = "accept")
-    public WebElement addProjectButton;
+    WebElement addProjectButton;
 
     @FindBy(id = "name")
     public WebElement nameField;
@@ -47,6 +49,12 @@ public class AddProjectPage extends BasePageFactory {
     public boolean isPageOpened() {
         return pageIdentifier.isDisplayed();
     }
+
+    public ProjectsPage clickAddProjectButton(){
+        addProjectButton.submit();
+        return new ProjectsPage(browsersService, false);
+    }
+
 /*
     @Override
     protected void openPage() {

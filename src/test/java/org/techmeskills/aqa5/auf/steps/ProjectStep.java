@@ -6,6 +6,8 @@ import org.techmeskills.aqa5.auf.core.BrowsersService;
 import org.techmeskills.aqa5.auf.pages.AddProjectPage;
 import org.techmeskills.aqa5.auf.pages.DashboardPage;
 import org.techmeskills.aqa5.auf.pages.LoginPage;
+import org.techmeskills.aqa5.auf.pages.administration.AdministrationPage;
+import org.techmeskills.aqa5.auf.pages.administration.ProjectsPage;
 
 public class ProjectStep extends BaseStep {
 
@@ -17,9 +19,10 @@ public class ProjectStep extends BaseStep {
     public void createNewProject(String name, String type) {
         DashboardPage dashboardPage = new DashboardPage(browsersService);
         //dashboardPage.getAddProjectButton().click();
-        dashboardPage.addProjectButton.click();
+        //dashboardPage.addProjectButton.click();
+        AddProjectPage addProjectPage = dashboardPage.clickAddProjectButton();
 
-        AddProjectPage addProjectPage = new AddProjectPage(browsersService);
+        //AddProjectPage addProjectPage = new AddProjectPage(browsersService);
         //addProjectPage.getNameField().sendKeys(name);
         addProjectPage.nameField.sendKeys(name);
 
@@ -39,6 +42,7 @@ public class ProjectStep extends BaseStep {
         }
 
         //addProjectPage.getAddProjectButton().submit();
-        addProjectPage.addProjectButton.submit();
+        //addProjectPage.addProjectButton.submit();
+        ProjectsPage projectsPage = addProjectPage.clickAddProjectButton();
     }
 }

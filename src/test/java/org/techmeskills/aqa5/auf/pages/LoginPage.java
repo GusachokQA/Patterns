@@ -19,13 +19,13 @@ public class LoginPage extends BasePageFactory {
     public WebElement passwordField;
 
     @FindBy(id = "button_primary")
-    public WebElement loginButton;
+    WebElement loginButton;
 
     //private By emailSelector = By.id("name");
     //private By passwordSelector = By.id("password");
     //private By loginSelector = By.id("button_primary");
 
-    BrowsersService browsersService;
+    //BrowsersService browsersService;
 
     public LoginPage(BrowsersService browsersService) {
         super(browsersService, false);
@@ -39,6 +39,11 @@ public class LoginPage extends BasePageFactory {
     @Override
     public boolean isPageOpened() {
         return pageIdentifier.isDisplayed();
+    }
+
+    public DashboardPage clickLoginButton(){
+        loginButton.click();
+        return new DashboardPage(browsersService);
     }
 /*
     @Override

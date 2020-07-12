@@ -24,4 +24,6 @@ public class AdministrationPage extends BasePage {
     public UIElement getProjectsLink() {
         return new UIElement(browsersService, projectLinkSelector);
     }
+
+
 }
