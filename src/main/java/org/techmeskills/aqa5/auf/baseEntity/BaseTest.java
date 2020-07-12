@@ -3,6 +3,7 @@ package org.techmeskills.aqa5.auf.baseEntity;
 import org.openqa.selenium.WebDriver;
 import org.techmeskills.aqa5.auf.core.BrowsersService;
 import org.techmeskills.aqa5.auf.core.ReadProperties;
+import org.techmeskills.aqa5.auf.models.User;
 import org.techmeskills.aqa5.auf.utils.Listener;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,6 +14,7 @@ public abstract class BaseTest {
     public BrowsersService browsersService;
     public ReadProperties properties;
     public WebDriver driver;
+    public User user;
 
     @BeforeClass
     public void openPage() {
@@ -20,6 +22,8 @@ public abstract class BaseTest {
         properties = new ReadProperties();
         driver = browsersService.getDriver();
         driver.get(properties.getURL());
+
+        User user = new User("atrostyanko+master@gmail.com" , "QqtRK9elseEfAk6ilYcJ");
     }
 
     @AfterClass
