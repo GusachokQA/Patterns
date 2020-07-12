@@ -13,6 +13,7 @@ public class LoginStep extends BaseStep {
         super(browsersService);
     }
 
+
     @Step
     public void login(User user) {
         LoginPage loginPage = new LoginPage(browsersService);

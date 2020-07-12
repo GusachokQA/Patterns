@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 public class SmokeTest1 extends BaseTest {
     @Test
     public void login() {
-        User user = new User("atrostyanko+master@gmail.com" , "QqtRK9elseEfAk6ilYcJ");
+        //User user = new User("atrostyanko+master@gmail.com" , "QqtRK9elseEfAk6ilYcJ");
         LoginStep loginStep = new LoginStep(browsersService);
         loginStep.login(user);
     }
