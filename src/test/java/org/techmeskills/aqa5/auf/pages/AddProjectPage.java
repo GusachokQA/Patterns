@@ -52,7 +52,7 @@ public class AddProjectPage extends BasePageFactory {
 
     public ProjectsPage clickAddProjectButton(){
         addProjectButton.submit();
-        return new ProjectsPage(browsersService, false);
+        return new ProjectsPage(browsersService, true);
     }
 
 /*
