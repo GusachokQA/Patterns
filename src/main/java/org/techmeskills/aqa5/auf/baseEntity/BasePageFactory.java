@@ -1,24 +1,14 @@
 package org.techmeskills.aqa5.auf.baseEntity;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.techmeskills.aqa5.auf.core.BrowsersService;
 
 public abstract class BasePageFactory {
     protected static final int WAIT_FOR_PAGE_LOAD_IN_SECONDS = 5;
     protected final BrowsersService browsersService;
-    //public final WebDriver driver;
 
-    /**
-     * In subclasses  should be used for page opening
-     */
     protected abstract void openPage();
 
-    /**
-     * checks is page opened
-     *
-     * @return true if opened
-     */
     public abstract boolean isPageOpened();
 
     public BasePageFactory(BrowsersService browsersService, boolean openPageByUrl) {
@@ -32,9 +22,6 @@ public abstract class BasePageFactory {
         waitForOpen();
     }
 
-    /**
-     * Waiting for page opening
-     */
     protected void waitForOpen() {
         int secondsCount = 0;
         boolean isPageOpenedIndicator = isPageOpened();

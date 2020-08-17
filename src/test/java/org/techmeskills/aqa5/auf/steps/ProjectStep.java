@@ -5,9 +5,6 @@ import org.techmeskills.aqa5.auf.baseEntity.BaseStep;
 import org.techmeskills.aqa5.auf.core.BrowsersService;
 import org.techmeskills.aqa5.auf.pages.AddProjectPage;
 import org.techmeskills.aqa5.auf.pages.DashboardPage;
-import org.techmeskills.aqa5.auf.pages.LoginPage;
-import org.techmeskills.aqa5.auf.pages.administration.AdministrationPage;
-import org.techmeskills.aqa5.auf.pages.administration.ProjectsPage;
 
 public class ProjectStep extends BaseStep {
 
@@ -18,31 +15,23 @@ public class ProjectStep extends BaseStep {
     @Step
     public void createNewProject(String name, String type) {
         DashboardPage dashboardPage = new DashboardPage(browsersService);
-        //dashboardPage.getAddProjectButton().click();
-        //dashboardPage.addProjectButton.click();
-        AddProjectPage addProjectPage = dashboardPage.clickAddProjectButton();
+        dashboardPage.addProjectButton.click();
 
-        //AddProjectPage addProjectPage = new AddProjectPage(browsersService);
-        //addProjectPage.getNameField().sendKeys(name);
+        AddProjectPage addProjectPage = new AddProjectPage(browsersService);
         addProjectPage.nameField.sendKeys(name);
 
         switch (type) {
             case "Use a single repository for all cases (recommended)":
-                //addProjectPage.getSuiteModeSingleOption().click();
-                addProjectPage.suiteModeSingle.click();
+                addProjectPage.suiteModeSingleOption.click();
                 break;
             case "Use a single repository with baseline support":
-                //addProjectPage.getSuiteModeSingleBaselineOption().click();
-                addProjectPage.suiteModeSingleBaseline.click();
+                addProjectPage.suiteModeSingleBaselineOption.click();
                 break;
             case "Use multiple test suites to manage cases":
-                //addProjectPage.getSuiteModeMultiSelectorOption().click();
-                addProjectPage.suiteModeMulti.click();
+                addProjectPage.suiteModeMultiSelectorOption.click();
                 break;
         }
 
-        //addProjectPage.getAddProjectButton().submit();
-        //addProjectPage.addProjectButton.submit();
-        ProjectsPage projectsPage = addProjectPage.clickAddProjectButton();
+        addProjectPage.addProjectButton.submit();
     }
 }
